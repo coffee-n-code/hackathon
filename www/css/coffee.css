@@ -1,0 +1,116 @@
+@font-face {
+	font-family:"Geared";
+	src:url("../assets/type/Geared.ttf");
+	font-weight:bold;
+	font-style:normal;
+}
+
+body {
+	color:#252525;
+	background-color:#fff;
+	font-family:"Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	
+	margin:0;
+	padding:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin:0 0 12px;
+}
+
+h1 {
+	font-family:Geared;
+	font-size:96px;
+}
+
+h2 {
+	font-size:48px;
+}
+
+h3 {
+	font-size:32px;
+}
+
+h4 {
+	font-size:26px;
+}
+
+hr {
+	height:4px;
+	border:none;
+	border-top:2px solid #454545;
+	border-bottom:1px solid #454545;
+}
+
+p {
+	margin:18px 0;
+	font-size:22px;
+}
+
+a {
+	color:#00a8df;
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+a img {
+	border:none;
+}
+
+.Wrapper {
+	padding:20px 30px 60px;
+}
+
+.Wrapper:after {
+	clear:both;
+	content:".";
+	height:0;
+	visibility:hidden;
+	display:block;
+}
+
+.Header {
+	color:#fff;
+	text-shadow:1px 1px 4px rgba(0, 0, 0, 0.8);
+	
+	background-image:url("../assets/bg.jpg");
+	background-position:center 0px;
+	background-repeat:no-repeat;
+	padding:120px 30px 20px;
+	
+	box-shadow:inset 0 0 40px #000;
+}
+
+.Header h1 {
+	margin:0 0 -10px;
+}
+
+.Header h2 {
+	font-weight:300;
+}
+
+.Content {
+	float:left;
+	width:70%;
+}
+
+.Aside {
+	float:left;
+	width:30%;
+	min-width:300px;
+}
+
+.Answer {
+	margin:0 0 40px;
+}
+
+.Footer {
+	background-image:url("../assets/btm.jpg");
+	background-position:center 0px;
+	background-repeat:no-repeat;
+	
+	min-height:200px;
+}

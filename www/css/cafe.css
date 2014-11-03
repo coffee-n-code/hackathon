@@ -1,0 +1,137 @@
+@font-face {
+	font-family:"Gotham";
+	src:url("../assets/type/GothamRnd-Medium.otf");
+	font-weight:bold;
+	font-style:normal;
+}
+
+body {
+	color:#656565;
+	background-color:#fff;
+	font-family:"Helvetica Neue", Helvetica, Arial, Sans-Serif;
+	font-size:18px;
+	margin:0;
+	padding:0;
+}
+
+a {
+	color:#454545;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+a img {
+	border:none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Gotham;
+	margin:0;
+	text-transform:uppercase;
+	letter-spacing:-1px;
+}
+
+h1, h2 {
+	text-transform:lowercase;
+	position:relative;
+	overflow:hidden;
+	
+	border-top:2px solid #252525;
+	border-bottom:2px solid #252525;
+}
+
+h1 a, h2 a {
+	text-decoration:none;
+	color:#f5f5f5;
+}
+
+h1 a:after, h2 a:after {
+	content:"\00261C";
+	padding-left:10px;
+	opacity:0;
+}
+
+h1 a:hover:after, h2 a:hover:after {
+	opacity:1;
+}
+
+h1 img, h2 img {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
+}
+
+h1 {
+	color:#151515;
+	border-top:none;
+	font-size:96px;
+	line-height:92px;
+	padding:30px 40px 60px 205px;
+	background:
+		url("../assets/logo.png") no-repeat 25px 45px,
+		-webkit-linear-gradient(top, rgba(18, 18, 18, 0) 10%, rgba(18, 18, 18, 0.13) 100%);
+}
+
+h2 {
+	color:#f5f5f5;
+	text-shadow:0 2px rgba(0, 0, 0, 0.36), 0 -1px #fff;
+	font-size:48px;
+	padding:30px 40px 60px;
+	background:-webkit-linear-gradient(top, rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 0.62) 100%);
+}
+
+h3 {
+	font-size:32px;
+}
+
+h4 {
+	font-size:26px;
+}
+
+p {
+	border-left:1px dotted #ccc;
+	font-size:18px;
+	line-height:30px;
+	max-width:540px;
+	margin:18px 0;
+	padding:0 40px;
+}
+
+menu {
+	font-size:22px;
+	text-align:center;
+	list-style:none;
+	margin:0;
+	padding:30px 40px;
+}
+
+menu li {
+	display:inline-block;
+	padding:0 0 10px;
+}
+
+menu li:after {
+	content:" ";
+	display:inline-block;
+	width:30px;
+}
+
+menu li:last-child:after {
+	content:"";
+	width:0;
+}
+
+.Wrapper {
+	padding:20px 20px 30px 40px;
+}
+
+.Wrapper:after {
+	clear:both;
+	content:".";
+	height:0;
+	visibility:hidden;
+	display:block;
+}
