@@ -7,11 +7,26 @@
 
 body {
 	color:#656565;
-	background-color:#fff;
+	background-color:#252525;
 	font-family:"Helvetica Neue", Helvetica, Arial, Sans-Serif;
 	font-size:18px;
 	margin:0;
 	padding:0;
+	text-align:center;
+	
+	display:-webkit-flex;
+	-webkit-flex-flow:column nowrap;
+	-webkit-justify-content:flex-start;
+	-webkit-align-items:center;
+}
+
+.PageWrapper {
+	text-align:left;
+	max-width:960px;
+	margin:0 auto;
+	
+	border-left:2px solid #252525;
+	border-right:2px solid #252525;
 }
 
 a {
@@ -28,16 +43,16 @@ a img {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family:Gotham;
-	margin:0;
-	text-transform:uppercase;
+	margin:0 0 12px;
+	/* text-transform:uppercase; */
 	letter-spacing:-1px;
 }
 
 h1, h2 {
-	text-transform:lowercase;
+	/* text-transform:lowercase; */
 	position:relative;
 	overflow:hidden;
-	
+	margin:0;
 	border-top:2px solid #252525;
 	border-bottom:2px solid #252525;
 }
@@ -67,40 +82,39 @@ h1 img, h2 img {
 h1 {
 	color:#151515;
 	border-top:none;
-	font-size:96px;
-	line-height:92px;
-	padding:30px 40px 60px 205px;
+	font-size:72px;
+	line-height:72px;
+	padding:40px 40px 40px 160px;
 	background:
-		url("../assets/logo.png") no-repeat 25px 45px,
-		-webkit-linear-gradient(top, rgba(18, 18, 18, 0) 10%, rgba(18, 18, 18, 0.13) 100%);
+		url("../assets/logo.png") no-repeat 25px center,
+		-webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 100%);
 }
 
 h2 {
 	color:#f5f5f5;
-	text-shadow:0 2px rgba(0, 0, 0, 0.36), 0 -1px #fff;
-	font-size:48px;
-	padding:30px 40px 60px;
+	/* text-shadow:0 2px rgba(0, 0, 0, 0.36), 0 -1px #fff; */
+	font-size:42px;
+	padding:30px 40px 50px;
 	background:-webkit-linear-gradient(top, rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 0.62) 100%);
 }
 
 h3 {
-	font-size:32px;
-}
-
-h4 {
 	font-size:26px;
 }
 
+h4 {
+	font-size:22px;
+}
+
 p {
-	border-left:1px dotted #ccc;
-	font-size:18px;
+	font-size:16px;
 	line-height:30px;
-	max-width:540px;
-	margin:18px 0;
-	padding:0 40px;
+	/* max-width:540px; */
+	margin:0 0 18px;
 }
 
 menu {
+	background-color:#fff;
 	font-size:22px;
 	text-align:center;
 	list-style:none;
@@ -125,7 +139,8 @@ menu li:last-child:after {
 }
 
 .Wrapper {
-	padding:20px 20px 30px 40px;
+	background-color:#fff;
+	padding:30px 20px 30px 40px;
 }
 
 .Wrapper:after {
@@ -134,4 +149,13 @@ menu li:last-child:after {
 	height:0;
 	visibility:hidden;
 	display:block;
+}
+
+
+.Hackathon > img {
+	clear:left;
+	float:left;
+	margin-right:30px;
+	margin-bottom:10px;
+	max-width:50%;
 }

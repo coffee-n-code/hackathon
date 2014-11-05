@@ -39,5 +39,19 @@ var fit_images = function() {
 	}
 };
 
+var override_tags = function() {
+	var tags = document.getElementsByTagName('a');
+	/*
+		TO IMPLEMENT:
+			
+			We should have an animation which scrolls the page
+			quickly towards the appropriate link within the page.
+			
+			This requires knowing some coordinates... which MAY
+			be tricky.  HOWEVER, I have some code for that somewhere.
+	*/
+};
+
 window.addEventListener('resize', fit_images, false);
 fit_images();
+override_tags();
