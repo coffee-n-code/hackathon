@@ -3,14 +3,173 @@
 <head>
 	<meta charset="utf-8">
 	<title>Coffee and Code</title>
-	<link href="css/cafe.css" type="text/css "rel="stylesheet" />
+	<style type="text/css">
+		@font-face {
+			font-family:"Gotham";
+			src:url("../assets/type/GothamRnd-Medium.otf");
+			font-weight:bold;
+			font-style:normal;
+		}
+		
+		body {
+			color:#656565;
+			background-color:#252525;
+			font-family:"Helvetica Neue", Helvetica, Arial, Sans-Serif;
+			font-size:18px;
+			margin:0;
+			padding:0;
+			text-align:center;
+		
+			display:-webkit-flex;
+			-webkit-flex-flow:column nowrap;
+			-webkit-justify-content:flex-start;
+			-webkit-align-items:center;
+		}
+		
+		.PageWrapper {
+			text-align:left;
+			max-width:960px;
+			margin:0 auto;
+		
+			border-left:2px solid #252525;
+			border-right:2px solid #252525;
+		}
+		
+		a {
+			color:#454545;
+		}
+		
+		a:hover {
+			text-decoration:none;
+		}
+		
+		a img {
+			border:none;
+		}
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-family:Gotham;
+			margin:0 0 12px;
+			/* text-transform:uppercase; */
+			letter-spacing:-1px;
+		}
+		
+		h1, h2 {
+			/* text-transform:lowercase; */
+			position:relative;
+			overflow:hidden;
+			margin:0;
+			border-top:2px solid #252525;
+			border-bottom:2px solid #252525;
+		}
+		
+		h1 a, h2 a {
+			text-decoration:none;
+			color:#f5f5f5;
+		}
+		
+		h1 a:after, h2 a:after {
+			content:"\00261C";
+			padding-left:10px;
+			opacity:0;
+		}
+		
+		h1 a:hover:after, h2 a:hover:after {
+			opacity:1;
+		}
+		
+		h1 img, h2 img {
+			position:absolute;
+			top:0;
+			left:0;
+			z-index:-1;
+		}
+		
+		h1 {
+			color:#151515;
+			border-top:none;
+			font-size:72px;
+			line-height:72px;
+			padding:40px 40px 40px 160px;
+			background:
+				url("../assets/logo.png") no-repeat 25px center,
+				-webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 100%);
+		}
+		
+		h2 {
+			color:#f5f5f5;
+			/* text-shadow:0 2px rgba(0, 0, 0, 0.36), 0 -1px #fff; */
+			font-size:42px;
+			padding:30px 40px 50px;
+			background:-webkit-linear-gradient(top, rgba(18, 18, 18, 0) 0%, rgba(18, 18, 18, 0.62) 100%);
+		}
+		
+		h3 {
+			font-size:26px;
+		}
+		
+		h4 {
+			font-size:22px;
+		}
+		
+		p {
+			font-size:16px;
+			line-height:30px;
+			/* max-width:540px; */
+			margin:0 0 18px;
+		}
+		
+		menu {
+			background-color:#fff;
+			font-size:22px;
+			text-align:center;
+			list-style:none;
+			margin:0;
+			padding:30px 40px;
+		}
+		
+		menu li {
+			display:inline-block;
+			padding:0 0 10px;
+		}
+		
+		menu li:after {
+			content:" ";
+			display:inline-block;
+			width:30px;
+		}
+		
+		menu li:last-child:after {
+			content:"";
+			width:0;
+		}
+		
+		.Wrapper {
+			background-color:#fff;
+			padding:30px 20px 30px 40px;
+		}
+		
+		.Wrapper:after {
+			clear:both;
+			content:".";
+			height:0;
+			visibility:hidden;
+			display:block;
+		}
+		
+		
+		.Hackathon > img {
+			clear:left;
+			float:left;
+			margin-right:30px;
+			margin-bottom:10px;
+			max-width:50%;
+		}
+	</style>
 </head>
 <body>
 	<div class="PageWrapper">
-	<h1>
-		Coffee &amp; Code
-		<!--<img src="assets/gifs/2.gif" />-->
-	</h1>
+	<h1>Coffee &amp; Code</h1>
 	
 	<menu>
 		<li><a href="#hackathon">The Hackathon</a></li>
@@ -91,6 +250,67 @@
 	</div>
 	
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
+	
+	
+	
+	<script type="text/javascript">
+		var fit_image = function(img) {
+			var img_w = img.width;
+			var img_h = img.height;
+		
+			if (!img_w) {
+				setTimeout(fit_image.bind(this, img), 1000);
+				return;
+			}
+		
+			var w = img.parentNode.clientWidth;
+			var h = img.parentNode.clientHeight;
+			var parent_ratio = w / h;
+		
+			var img_ratio = img_w / img_h;
+		
+			if (img_ratio > parent_ratio) {
+				var scale = h / img_h;
+				img_h *= scale;
+				img_w *= scale;
+				img.style.height = Math.round(img_h) + 'px';
+			} else {
+				var scale = w / img_w;
+				img_h *= scale;
+				img_w *= scale;
+				img.style.width = Math.round(img_w) + 'px';
+			}
+		
+			img.style.top = ((h - img_h) / 2) + 'px';
+			img.style.left = ((w - img_w) / 2) + 'px';
+		}.bind(this);
+		
+		var fit_images = function() {
+			var images = document.getElementsByTagName('img');
+			for (var i = 0, l = images.length; i < l; i++) {
+				var img = images[i];
+				var parent_tag = img.parentNode.tagName.toLowerCase();
+				if (parent_tag === 'h2' || parent_tag === 'h1')
+					fit_image(img);
+			}
+		};
+		
+		var override_tags = function() {
+			var tags = document.getElementsByTagName('a');
+			/*
+				TO IMPLEMENT:
+		
+					We should have an animation which scrolls the page
+					quickly towards the appropriate link within the page.
+		
+					This requires knowing some coordinates... which MAY
+					be tricky.  HOWEVER, I have some code for that somewhere.
+			*/
+		};
+		
+		window.addEventListener('resize', fit_images, false);
+		fit_images();
+		override_tags();
+	</script>
 </body>
 </html>
